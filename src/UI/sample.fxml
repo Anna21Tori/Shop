@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefWidth="750.0" spacing="20.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller">
+   <children>
+      <HBox alignment="TOP_CENTER" depthTest="DISABLE" spacing="20.0">
+         <children>
+            <TextField fx:id="nameTextField" onAction="#filter" promptText="Enter name">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#filter" text="Search">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <HBox alignment="TOP_CENTER" prefHeight="50.0" spacing="20.0">
+         <children>
+            <Label text="Fulfillment:">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="fulfillmentComboBox" onAction="#filter" prefWidth="150.0" visibleRowCount="5" />
+            <Label text="Sort by:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </Label>
+            <ComboBox fx:id="sortedComboBox" onAction="#filter" prefWidth="150.0" />
+         </children>
+      </HBox>
+      <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="100.0">
+         <children>
+            <Label text="Products">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" startX="-100.0" />
+            <TableView fx:id="table" prefHeight="500.0" prefWidth="540.0">
+              <columns>
+                <TableColumn fx:id="colName" prefWidth="143.0" text="Name" />
+                <TableColumn fx:id="colFulfillmentCenterName" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" resizable="false" sortable="false" text="Fulfillment Center" />
+                  <TableColumn fx:id="colAmount" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" resizable="false" text="Amount" />
+                  <TableColumn fx:id="colPrice" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" resizable="false" text="Price" />
+                  <TableColumn fx:id="colActive" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" resizable="false" sortable="false" />
+              </columns>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </VBox>
+      <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="cart" mnemonicParsing="false" onAction="#openCart" prefHeight="33.0" prefWidth="319.0" text="Cart">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
